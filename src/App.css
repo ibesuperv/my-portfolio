@@ -1,0 +1,129 @@
+.navigation-menu {
+  transform: translateY(-100vh);
+  transition: transform 0.33s ease-out;
+  z-index: 5;
+  overflow: hidden;
+
+  &.active {
+    transform: translateY(0);
+
+    &:not(.is-animating) {
+      .wrap {
+        .cols {
+          .col {
+            &.col-links {
+              transform: translateY(0%);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.is-animating {
+    &:not(.active) {
+      transform: translateY(0);
+    }
+
+    &.active {
+      .wrap {
+        .cols {
+          .col {
+            &.col-links {
+              transform: translateY(10%);
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wrap {
+    .cols {
+      .col {
+        &.col-links {
+          transform: translateY(20%);
+          opacity: 0;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+
+          .links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+
+            .link {
+              margin: 10px 100px;
+              flex: 1;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              a {
+                font-size: 32px;
+                color: #000;
+                text-decoration: none;
+                position: relative;
+
+                &:after {
+                  position: absolute;
+                  top: auto;
+                  bottom: -2.5px;
+                  left: 0;
+                  transform: translateY(100%);
+                  content: '';
+                  height: 2px;
+                  width: 100%;
+                  background-color: #000;
+                  border-radius: 4px;
+                  transform: scaleX(0);
+                  transform-origin: left center;
+                  transition: transform 0.3s ease;
+                }
+
+                &:hover {
+                  font-size: 50px;
+
+                  &:after {
+                    transform: scaleX(1);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.col-image {
+          height: 100%;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+.nav-button {
+  &.is-animating {
+    span {
+      &.active {
+        transform: translateY(50%);
+        opacity: 0;
+      }
+    }
+  }
+
+  span {
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &.active {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}
