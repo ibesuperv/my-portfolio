@@ -26,7 +26,7 @@ const NavigationMenu = ({ navOpen, navIsAnimating, closeNav }) => {
                 <a href="#contact" onClick={handleLinkClick}>Contact</a>
               </li>
               <li className="link">
-                <a href="#" onClick={handleLinkClick}>Projects</a>
+                <a href="#projects" onClick={handleLinkClick}>Projects</a>
               </li>
             </ul>
           </div>

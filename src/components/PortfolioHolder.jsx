@@ -7,11 +7,14 @@ import LocomotiveScroll from 'locomotive-scroll';
 import Aboutme from './Projects/Portfolio/Aboutme';
 import Contact from './Projects/Portfolio/Contact';
 import { motion, useAnimation } from 'framer-motion'; // Import framer-motion components
+import ProjectHolder from './Projects/Portfolio/ProjectHolder';
 import AnimatedCursor from 'react-animated-cursor';
+
 
 function PortfolioHolder() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isLoaded, setIsLoaded] = useState(false);
+  const locomotiveScroll = new LocomotiveScroll;
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,10 +27,9 @@ function PortfolioHolder() {
   }, []);
 
   useEffect(() => {
-    // Simulate loading delay
     setTimeout(() => {
       setIsLoaded(true);
-    }, 500); // 2-second loading delay (adjust as needed)
+    }, 500); 
   }, []);
 
   const variants = {
@@ -48,12 +50,12 @@ function PortfolioHolder() {
   return (
     <>
       <div className="bg-black overflow-hidden">
-        <AnimatedCursor
+      <AnimatedCursor
           color="255, 255, 255"
           innerSize={40}
-          outerSize={9}
+          outerSize={15}
           innerScale={1}
-          outerScale={0.3}
+          outerScale={0.5}
           outerAlpha={1}
           outerStyle={{
             mixBlendMode: 'exclusion',
@@ -62,24 +64,20 @@ function PortfolioHolder() {
             mixBlendMode: 'exclusion',
           }}
         />
+        
         <Navbar />
+
         <motion.div variants={variants} initial="hidden" animate={control}>
           <Home />
         </motion.div>
-        <motion.div variants={variants} initial="hidden" animate={control}>
           <Aboutme />
-        </motion.div>
-        <motion.div variants={variants} initial="hidden" animate={control}>
           <Impossible />
-        </motion.div>
         {windowWidth >= 430 && (
-          <motion.div variants={variants} initial="hidden" animate={control}>
             <Eyes />
-          </motion.div>
         )}
-        <motion.div variants={variants} initial="hidden" animate={control}>
           <Contact />
-        </motion.div>
+          <ProjectHolder/>
+    
       </div>
     </>
   );

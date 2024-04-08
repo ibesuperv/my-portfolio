@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    user-select: none; 
 }
 
 #hero{
@@ -48,6 +49,7 @@
         color: azure;
         font-size: 1rem;
         letter-spacing: 0.5px;
+        padding-left: 50px;
     }
     & .menu{
         font-size: 25px;
@@ -67,9 +69,11 @@
 
     & .container {
         width: 50%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-;
+        justify-content: center;
+
         align-items: center;
         flex-grow: 1;
         transition-property: all;
@@ -81,6 +85,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        height: 100vh;
         font-size: 1rem;
         overflow: hidden;
         color: aliceblue;
@@ -262,6 +268,7 @@
         & .logo{
             font-size: 16px;
             padding-top: 10px;
+
         }
         & .wrap{
             & .button{

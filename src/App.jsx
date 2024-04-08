@@ -1,25 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PortfolioHolder from './components/PortfolioHolder';
 import Loading from './components/Loading';
+import CountryCard from './components/Projects/Country/CountryCard';
+import CountriesHeader from './components/Projects/Country/CountriesHeader';
+import LocomotiveScroll from 'locomotive-scroll';
+import NotesHolder from './components/Projects/Notes/NotesHolder';
+import NotFoundPage from './NotFoundPage';
+
 
 function App() {
-  // Simulating loading state with a setTimeout
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const locomotiveScroll = new LocomotiveScroll;
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
-      setIsLoading(false); // Set isLoading to false after a delay (simulating loading)
-    }, 5000); // Simulating a 2-second delay
+      setIsLoading(false);
+    }, 5000); // Simulating a 5-second loading delay
   }, []);
 
   return (
-    <>
+    <div className='w-full'>
       {isLoading ? (
-        <Loading /> // Display the Loading component while isLoading is true
+        <Loading />
       ) : (
-        <PortfolioHolder /> // Display your main content once isLoading is false
+        <Router>
+          <Routes>
+            <Route path="/" element={<PortfolioHolder />} />
+            <Route path="/country" element={<CountriesHeader />} />
+            <Route path="/country/:name" element={<CountryCard />} />
+            <Route path="/notes" element={<NotesHolder />} />
+            <Route path='*' element={<NotFoundPage/>}/>
+          </Routes>
+
+
+        </Router>
       )}
-    </>
+      
+    </div>
   );
 }
 

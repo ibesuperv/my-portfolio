@@ -3,15 +3,11 @@ import CountriesCard from './CountriesCard';
 
 function CountriesHeader() {
   const [countries, setCountries] = useState([]);
-  const regions = [
-    { name: "Asia" },
-    { name: "Africa" },
-    { name: "America" },
-    { name: "Antarctic" },
-    { name: "Oceania" },
-    { name: "Europe" },
-  ];
   const [search, setSearch] = useState('');
+
+  useEffect(()=>{
+    document.title="Countries";
+  })
 
   useEffect(() => {
     const getCountries = async () => {
@@ -38,34 +34,19 @@ function CountriesHeader() {
     }
   };
 
-  const searchFilter = async (region) => {
-    try {
-      const res = await fetch(`https://restcountries.com/v3.1/region/${region}`);
-      const data = await res.json();
-      setCountries(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const handleSearch = (e) => {
     e.preventDefault();
     searchCountry();
   };
 
-  const handleRegion = (e) => {
-    e.preventDefault();
-    searchFilter();
-  };
-
   return (
     <>
       {!countries ? (
-        <h1 className='text-gray-800 font-bold uppercase flex items-center justify-center text-center h-screen text-4xl'>Loading</h1>
+        <h1 className='text-white font-bold uppercase flex items-center justify-center text-center h-screen text-4xl'>Loading</h1>
       ) : (
-        <section className='mx:auto p-10 w-auto h-auto'>
-          <div className="search flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <form autoComplete='off' onSubmit={handleSearch} className='max-w-4xl md:flex-1 mb-10'>
+        <section className='main-c-holder'>
+          <div className="search">
+            <form autoComplete='off' onSubmit={handleSearch} className='searchform'>
               <input
                 type="text"
                 name="search"
@@ -75,19 +56,13 @@ function CountriesHeader() {
                 }}
                 id="search"
                 placeholder='Search the Country'
-                className='py-2 px-4 placeholder-gray-800 w-full shadow rounded outline-none'
+                className='searchbar'
                 required
               />
             </form>
-            <form className='md:flex-2' onSubmit={handleRegion} value={regions.name} onChange={e => searchFilter(e.target.value)}>
-              <select className='w-52 py-3 px-4 outline-none shadow rounded mb-10' name="filter-by-region" id="filter-by-region">
-                {regions.map((region, index) => (
-                  <option key={index} value={region.name}>{region.name}</option>
-                ))}
-              </select>
-            </form>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          <div className="cs-cards">
             {countries.map((country) => (
               <CountriesCard key={country.name.common} {...country} />
             ))}
