@@ -4,7 +4,7 @@ import Fg from './bg-and-fg/Fg'
 
 function ProjectHolder() {
   return (
-    <div id='projects' className='w-full relative h-screen bg-zinc-800'>
+    <div id='projects' className='w-full relative h-screen bg-zinc-950'>
         <Bg/> 
         <Fg/>
     </div>
