@@ -28,26 +28,13 @@ function Cards({ reference }) {
           dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
           className="w-20 h-20 mt-8 rounded-full text-white overflow-hidden"
           style={{
-            backgroundImage: 'url("/notes.png")',
+            backgroundImage: 'url("/img.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             cursor: 'grab', // Change cursor style when dragging
           }}
         ></motion.div>
         
-        <motion.div
-          drag
-          dragConstraints={reference}
-          whileDrag={{ scale: 1.2 }}
-          dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
-          className="w-20 h-20 mt-8 rounded-full text-white overflow-hidden"
-          style={{
-            backgroundImage: 'url("/flag.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            cursor: 'grab', // Change cursor style when dragging
-          }}
-        ></motion.div>
       
       
     </>
