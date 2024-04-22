@@ -15,7 +15,7 @@ function Cards({ reference }) {
             backgroundImage: 'url("/flag.png")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            cursor: 'grab', // Change cursor style when dragging
+            cursor: 'grab', 
           }}
         ></motion.div>
       
@@ -28,10 +28,10 @@ function Cards({ reference }) {
           dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
           className="w-20 h-20 mt-8 rounded-full text-white overflow-hidden"
           style={{
-            backgroundImage: 'url("/img.jpg")',
+            backgroundImage: 'url("/photo.JPG")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            cursor: 'grab', // Change cursor style when dragging
+            cursor: 'grab',
           }}
         ></motion.div>
         
