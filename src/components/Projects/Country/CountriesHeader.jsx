@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CountriesCard from './CountriesCard';
-import Navbar from './Portfolio/Navbar';
+import Navbar from '../Portfolio/Navbar';
 
 
 function CountriesHeader() {
