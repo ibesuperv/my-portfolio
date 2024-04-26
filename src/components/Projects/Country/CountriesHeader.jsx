@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CountriesCard from './CountriesCard';
+import Navbar from './Portfolio/Navbar';
+
 
 function CountriesHeader() {
   const [countries, setCountries] = useState([]);
@@ -44,6 +46,7 @@ function CountriesHeader() {
       {!countries ? (
         <h1 className='text-white font-bold uppercase flex items-center justify-center text-center h-screen text-4xl'>Loading</h1>
       ) : (
+        <Navbar />
         <section className='main-c-holder'>
           <div className="search">
             <form autoComplete='off' onSubmit={handleSearch} className='searchform'>
