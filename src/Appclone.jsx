@@ -20,7 +20,7 @@ function Appclone() {
   }, []);
 
   return (
-    <div className='w-full'>
+    <div className='w-full cursor-auto'>
       {isLoading ? (
         <Loading />
       ) : (
