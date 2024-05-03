@@ -1,43 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PortfolioHolder from './components/PortfolioHolder';
-import Loading from './components/Loading';
-import CountryCard from './components/Projects/Country/CountryCard';
-import CountriesHeader from './components/Projects/Country/CountriesHeader';
-import LocomotiveScroll from 'locomotive-scroll';
-import NotesHolder from './components/Projects/Notes/NotesHolder';
-import NotFoundPage from './NotFoundPage';
-
+import React, { useState } from 'react';
+import { auth, provider, gitProvider, facebookProvider } from "./Firebaseconfig";
+import { signInWithPopup } from 'firebase/auth';
+import Appclone from './Appclone';
+import "./Signin.css";
+import { FaGoogle } from "react-icons/fa";
+import { IoLogoGithub } from "react-icons/io";
+import { FaFacebook } from "react-icons/fa";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const locomotiveScroll = new LocomotiveScroll;
+  const [value, setValue] = useState('');
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000); // Simulating a 5-second loading delay
-  }, []);
+  const handleGClick = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      setValue(result.user.email);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  
+  const handleFaceClick = async () => {
+    try {
+      const result = await signInWithPopup(auth, facebookProvider);
+      setValue(result.user.email);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const handleGitClick = async () => {
+    try {
+      const result = await signInWithPopup(auth, gitProvider);
+      setValue(result.user.email);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
-    <div className='w-full'>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <Router>
-          <Routes>
-            <Route path="/" element={<PortfolioHolder />} />
-            <Route path="/country" element={<CountriesHeader />} />
-            <Route path="/country/:name" element={<CountryCard />} />
-            <Route path="/notes" element={<NotesHolder />} />
-            <Route path='*' element={<NotFoundPage/>}/>
-          </Routes>
-
-
-        </Router>
-      )}
-      
-    </div>
+    <>
+      {value ? <Appclone /> : 
+      <div className="signin-container">
+        <div className="container-signin">
+          <div className="heading-text">
+            <h1>FOR SECURITY PURPOSE PLEASE SIGNIN</h1>
+          </div>
+          <div className="social-login">
+            <button onClick={handleGClick}> <FaGoogle /></button>
+            <button onClick={handleGitClick}><IoLogoGithub /></button>
+            <button className='facebook' onClick={handleFaceClick}><FaFacebook /></button>
+          </div>
+        </div>
+      </div>
+      }
+    </>
   );
 }
 

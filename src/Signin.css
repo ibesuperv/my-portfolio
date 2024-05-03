@@ -1,0 +1,49 @@
+.signin-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .container-signin{
+        display: flex;
+        flex-direction: column;
+        
+
+        & .social-login{
+            display: flex;
+            justify-content: space-between;
+            & button{
+                border: 2px solid white;
+                width: auto;
+                height: auto;
+                padding: 10px;
+                margin-top: 20px;
+                border-radius: 50%;
+                &:hover{
+                    background-color: aliceblue;
+                    color: rgb(17, 10, 10);
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+}
+
+
+    @media  screen and (max-width:430px) {
+        .signin-container{
+            & .container-signin{
+                & .heading-text{
+                    font-size: 13px;
+                }
+            }
+        }
+
+    }
+
+        
+
+
