@@ -4,10 +4,15 @@ import "./portfolio.css"
 
 function Name() {
   return (
-    <div id='name' className="name">
-    <h1 className=''>
-      varun B
-    </h1>
+    <div id='name'>
+      <div className="name">
+    <p className="intro" >
+    Hi There 👋 ! This is 
+    </p>
+      <p className="varun" >
+      Varun B 
+      </p>
+        </div>
     </div>
   )
 }
