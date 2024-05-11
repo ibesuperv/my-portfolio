@@ -20,7 +20,7 @@ function Name() {
           Hi There 👋 ! This is 
         </p>
         <p className="varun" style={style1}>
-          Varun B 
+         <span className="text-red-400">V</span>arun B 
         </p>
       </div>
     </div>
