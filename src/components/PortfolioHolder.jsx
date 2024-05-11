@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Projects/Portfolio/Navbar';
 import Home from './Projects/Portfolio/Home';
+import Name from './Projects/Portfolio/Name';
 import Eyes from './Projects/Portfolio/Eyes';
 import Impossible from './Projects/Portfolio/Impossible';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -70,6 +71,7 @@ function PortfolioHolder() {
         <motion.div variants={variants} initial="hidden" animate={control}>
           <Home />
         </motion.div>
+        <Name />
           <Aboutme />
           <Impossible />
         {windowWidth >= 430 && (
