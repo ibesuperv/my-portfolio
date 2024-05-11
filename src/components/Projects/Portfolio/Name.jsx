@@ -5,7 +5,7 @@ import "./portfolio.css"
 function Name() {
   return (
     <div id='name' className="name">
-    <h1 className='w-full h-screen bg-black text-white'>
+    <h1 className=''>
       varun B
     </h1>
     </div>
