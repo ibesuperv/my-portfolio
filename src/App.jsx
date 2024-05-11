@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { auth, provider, gitProvider, facebookProvider } from "./Firebaseconfig";
+import { auth, provider, gitProvider} from "./Firebaseconfig";
 import { signInWithPopup } from 'firebase/auth';
 import Appclone from './Appclone';
 import "./Signin.css";
@@ -19,15 +19,6 @@ function App() {
     }
   };
   
-  const handleFaceClick = async () => {
-    try {
-      const result = await signInWithPopup(auth, facebookProvider);
-      setValue(result.user.email);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
   const handleGitClick = async () => {
     try {
       const result = await signInWithPopup(auth, gitProvider);
@@ -48,7 +39,6 @@ function App() {
           <div className="social-login">
             <button onClick={handleGClick}> <FaGoogle /></button>
             <button onClick={handleGitClick}><IoLogoGithub /></button>
-            <button className='facebook' onClick={handleFaceClick}><FaFacebook /></button>
           </div>
         </div>
       </div>
