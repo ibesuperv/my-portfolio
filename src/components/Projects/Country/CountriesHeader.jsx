@@ -43,8 +43,7 @@ function CountriesHeader() {
   };
 
   return (
-    <>
-      <div className="w-full min-h-screen>
+    <div className="w-full min-h-screen"> {/* Added missing double quote at the end of class name */}
       <ProjectsMenu/>
       <section className='main-c-holder'>
         <div className="search">
@@ -77,8 +76,8 @@ function CountriesHeader() {
         </div>
       </section>
     </div>
-    </>
   );
 }
 
 export default CountriesHeader;
+              
