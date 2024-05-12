@@ -16,7 +16,7 @@ const ProjectsMenu = () => {
           aria-label="Toggle Navigation"
         >
           <span className="span menu label--nav-closed">
-            <Link to="/">HOME</Link>
+            <Link className="text-white" to="/">HOME</Link>
           </span>
         </button>
       </div>
