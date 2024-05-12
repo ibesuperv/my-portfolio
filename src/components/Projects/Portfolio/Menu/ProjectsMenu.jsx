@@ -10,15 +10,9 @@ const ProjectsMenu = () => {
         <span className="label--nav-open">besuperv</span>
       </h3>
       <div className="wrap">
-        <button
-          className="button relative h-30px cursor-pointer text-white nav-button"
-          type="button"
-          aria-label="Toggle Navigation"
-        >
-          <span className="span menu label--nav-closed">
-            <Link to="/">HOME</Link>
-          </span>
-        </button>
+        <Link className="span menu label--nav-closed text-white" to="/">
+          HOME
+        </Link>
       </div>
     </header>
   );
