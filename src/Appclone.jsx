@@ -30,6 +30,7 @@ function Appclone() {
             <Route path="/country" element={<CountriesHeader />} />
             <Route path="/country/:name" element={<CountryCard />} />
             <Route path="/notes" element={<NotesHolder />} />
+            <Route path='/error' element={<NotFoundPage/>}/>
             <Route path='*' element={<NotFoundPage/>}/>
           </Routes>
 
