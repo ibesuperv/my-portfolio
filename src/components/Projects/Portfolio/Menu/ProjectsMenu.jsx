@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../portfolio.css";
+import "./projectStyle.css";
 
 const ProjectsMenu = () => {
   return (
