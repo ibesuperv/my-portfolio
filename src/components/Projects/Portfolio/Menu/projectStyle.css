@@ -1,0 +1,39 @@
+.header{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+    padding-top: 1rem;
+
+    & .logo{
+        color: azure;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        padding-left: 50px;
+    }
+    & .menu{
+        font-size: 25px;
+        color: aliceblue;
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+
+    .header{
+        & .logo{
+            font-size: 16px;
+            padding-top: 10px;
+
+        }
+        & .wrap{
+            & .button{
+                height: 10px;
+
+                & .span{
+                font-size: 16px;
+                }
+            }
+        }
+    }
