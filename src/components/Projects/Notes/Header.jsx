@@ -1,9 +1,10 @@
 import React from "react";
+import ProjectsMenu from "../Portfolio/Menu/ProjectsMenu";
 
 function Header() {
   return (
     <div className="nheader">
-      <h1 className="notes__title">Notes</h1>
+      <ProjectsMenu />
     </div>
   );
 }
