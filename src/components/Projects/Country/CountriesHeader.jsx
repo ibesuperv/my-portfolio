@@ -16,7 +16,7 @@ function CountriesHeader() {
     const getCountries = async () => {
       try {
         const res = await fetch('https://restcountries.com/v3.1/all');
-        const data = await res.json(); // Changed "let" to "const" for data
+        const data = await res.json();
         data.sort((a, b) => a.name.common.localeCompare(b.name.common));
         setCountries(data);
         setLoading(false); 
@@ -44,8 +44,9 @@ function CountriesHeader() {
 
   return (
     <>
+      <div className="w-full min-h-screen>
+      <ProjectsMenu/>
       <section className='main-c-holder'>
-        <ProjectsMenu/>
         <div className="search">
           <form autoComplete='off' onSubmit={handleSearch} className='searchform'>
             <input
@@ -75,6 +76,7 @@ function CountriesHeader() {
           )}
         </div>
       </section>
+    </div>
     </>
   );
 }
