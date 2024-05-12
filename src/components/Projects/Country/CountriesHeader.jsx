@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CountriesCard from './CountriesCard';
 import DotLoader from 'react-spinners/DotLoader'; 
-import ProjectsMenu from "../Portfolio/Menu/ProjectsMenu"; // Removed unnecessary colon ":" at the end of the import statement
+import ProjectsMenu from "../Portfolio/Menu/ProjectsMenu";
 
 function CountriesHeader() {
   const [countries, setCountries] = useState([]);
