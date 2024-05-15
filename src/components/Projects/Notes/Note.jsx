@@ -1,14 +1,14 @@
 import React from "react";
 import  { MdDeleteForever , MdEditNote } from "react-icons/md";
 
-function Note({ id, text, deleteNote, editHandler }) {
+function Note({ id, text, deleteHandler, editHandler }) {
   return (
     <div className="note">
       <div className="note__body">{text}</div>
       <div className="note__footer" style={{ justifyContent: "flex-end" }}>
         <MdDeleteForever
           className="note__delete"
-          onClick={() => deleteNote(id)}
+          onClick={() => deleteHandler(id)}
           aria-hidden="true"
         />
         <MdEditNote
