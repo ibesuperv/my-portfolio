@@ -10,9 +10,11 @@ const ProjectsMenu = () => {
         <span className="label--nav-open">besuperv</span>
       </h3>
       <div className="wrap">
+        <h3 className="logo">
         <Link className="span menu label--nav-closed text-white" to="/">
           HOME
         </Link>
+          </h3>
       </div>
     </header>
   );
