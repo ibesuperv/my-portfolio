@@ -55,9 +55,9 @@ function Notes () {
             notes.map((note) => (
                 editToggle === note.id ?
                 <CreateNote 
-                        inputText={inputText}
-                        setInputText = {setInputText} 
-                        saveHandler = {saveHandler}
+                        textHandler={textHandler}
+                    saveHandler={saveHandler}
+            inputText={inputText}
                         />
                 :
                 <Note
@@ -73,9 +73,9 @@ function Notes () {
         {
             editToggle === null ? 
             <CreateNote 
+            textHandler={textHandler}
+            saveHandler={saveHandler}
             inputText={inputText}
-            setInputText = {setInputText} 
-            saveHandler = {saveHandler}
         /> : <></>
         }
     </div>
