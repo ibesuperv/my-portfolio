@@ -36,8 +36,8 @@ function App() {
             <h1>FOR SECURITY PURPOSE PLEASE SIGNIN</h1>
           </div>
           <div className="social-login">
+              <button onClick={handleGitClick}><IoLogoGithub /></button>
             <button onClick={handleGClick}> <FcGoogle /> </button>
-            <button onClick={handleGitClick}><IoLogoGithub /></button>
           </div>
         </div>
       </div>
