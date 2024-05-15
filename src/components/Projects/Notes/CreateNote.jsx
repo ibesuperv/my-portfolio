@@ -1,7 +1,7 @@
 import React from "react";
 import LinearProgress from "@mui/material/LinearProgress";
 function CreateNote({ textHandler, saveHandler, inputText }) {
-  //character limit
+
   const charLimit = 100;
   const charLeft = charLimit - inputText.length;
   return (
