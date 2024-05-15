@@ -1,16 +1,23 @@
 import React from "react";
-import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+import  { MdDeleteForever , MdEditNote } from "react-icons/md";
 
-function Note({ id, text, deleteNote }) {
+function Note({ id, text, deleteNote, editHandler }) {
   return (
     <div className="note">
       <div className="note__body">{text}</div>
       <div className="note__footer" style={{ justifyContent: "flex-end" }}>
-        <DeleteForeverOutlinedIcon
+        <MdDeleteForever
           className="note__delete"
           onClick={() => deleteNote(id)}
           aria-hidden="true"
-        ></DeleteForeverOutlinedIcon>
+        />
+        <MdEditNote
+          className="note__delete"
+          onClick={() => editHandler(id, text) }
+          aria-hidden="true"
+          />
+
+        
       </div>
     </div>
   );
