@@ -10,20 +10,38 @@ function Notes() {
   });
   const [inputText, setInputText] = useState("");
 
+const [editToggle, setEditToggle] = useState(null)
+
+    const editHandler = (id,text) => {
+        setEditToggle(id)
+        setInputText(text)
+    }
+  
   const textHandler = (e) => {
     setInputText(e.target.value);
   };
 
   const saveHandler = () => {
-    setNotes((prevState) => [
-      ...prevState,
-      {
-        id: uuid(),
-        text: inputText,
-      },
-    ]);
-    setInputText("");
-  };
+        if(editToggle) {
+            setNotes(notes.map((note) => (
+                note.id === editToggle ?
+                {...note, text: inputText}
+                : note
+            )))
+        } else {
+            setNotes((prevNotes) => [
+                ...prevNotes, {
+                    id: uuid(),
+                    text: inputText
+                }
+            ])
+        }
+        
+        setInputText("")
+        setEditToggle(null)
+    }
+
+  
 
   const deleteNote = (id) => {
     const updatedNotes = notes.filter((note) => note.id !== id);
@@ -39,10 +57,33 @@ function Notes() {
 
   return (
     <div className="notes">
-      {notes.map((note) => (
-        <Note key={note.id} id={note.id} text={note.text} deleteNote={deleteNote} />
-      ))}
-      <CreateNote textHandler={textHandler} saveHandler={saveHandler} inputText={inputText} />
+      {
+            notes.map((note) => (
+                editToggle === note.id ?
+                <CreateNote 
+                        inputText={inputText}
+                        setInputText = {setInputText} 
+                        saveHandler = {saveHandler}
+                        />
+                :
+                <Note
+                    key={note.id}
+                    id={note.id}
+                    text={note.text}
+                    editHandler = {editHandler}
+                    deleteHandler= {deleteHandler}
+                >
+                </Note>
+            ))
+        }
+        {
+            editToggle === null ? 
+            <CreateNote 
+            inputText={inputText}
+            setInputText = {setInputText} 
+            saveHandler = {saveHandler}
+        /> : <></>
+        }
     </div>
   );
 }
