@@ -1,7 +1,7 @@
 .signin-container {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(-45deg, black 50%, white 50%);
+  background: linear-gradient(45deg, black 50%, white 50%);
   color: aliceblue;
   display: flex;
   justify-content: center;
