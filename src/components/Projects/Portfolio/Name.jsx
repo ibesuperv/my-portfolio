@@ -4,7 +4,7 @@ import "./portfolio.css";
 function Name() {
   const style1 = {
     color: 'white',
-    fontSize: window.innerWidth < 430 ? '1.5rem' : '2rem', 
+    fontSize: window.innerWidth < 430 ? '1.9rem' : '2.5rem', 
   };
 
   const style2 = {
