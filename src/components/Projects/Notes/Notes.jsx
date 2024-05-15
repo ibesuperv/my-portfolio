@@ -4,24 +4,16 @@ import CreateNote from "./CreateNote";
 import { v4 as uuid } from "uuid";
 import "./Note.css";
 
-function Notes() {
-  const [notes, setNotes] = useState(() => {
-    return JSON.parse(localStorage.getItem("Notes")) || [];
-  });
-  const [inputText, setInputText] = useState("");
-
-const [editToggle, setEditToggle] = useState(null)
+function Notes () {
+    const [inputText, setInputText] = useState("")
+    const [notes, setNotes] = useState([])
+    const [editToggle, setEditToggle] = useState(null)
 
     const editHandler = (id,text) => {
         setEditToggle(id)
         setInputText(text)
     }
-  
-  const textHandler = (e) => {
-    setInputText(e.target.value);
-  };
-
-  const saveHandler = () => {
+    const saveHandler = () => {
         if(editToggle) {
             setNotes(notes.map((note) => (
                 note.id === editToggle ?
@@ -41,18 +33,20 @@ const [editToggle, setEditToggle] = useState(null)
         setEditToggle(null)
     }
 
-  
+    const deleteHandler = (id) => {
+        const newNotes = notes.filter(n => n.id !== id)
+        setNotes(newNotes)
+    }
 
-  const deleteNote = (id) => {
-    const updatedNotes = notes.filter((note) => note.id !== id);
-    localStorage.setItem("Notes", JSON.stringify(updatedNotes));
-    setNotes(updatedNotes);
-  };
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem("Notes"));
+        if (data) {
+          setNotes(data);
+        }
+      }, []);
 
   useEffect(() => {
-    if (notes.length > 0) {
-      localStorage.setItem("Notes", JSON.stringify(notes));
-    }
+    localStorage.setItem("Notes", JSON.stringify(notes));
   }, [notes]);
 
   return (
