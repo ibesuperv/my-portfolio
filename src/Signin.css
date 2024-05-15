@@ -35,7 +35,6 @@
     }
   }
 
-  /* Text blend effect */
  & h1 {
     mix-blend-mode: difference;
    font-weight: bold;
@@ -43,6 +42,3 @@
 }
 
 
-@media screen and (max-width: 430px) {
-  margin-left:50px;
-}
