@@ -16,10 +16,10 @@ function Name() {
   return (
     <div id='name'>
       <div className="name">
-        <p className="intro" style={style2}>
+        <p className="intro font-bold" style={style2}>
           Hi There 👋 ! This is 
         </p>
-        <p className="varun" style={style1}>
+        <p className="varun font-extrabold" style={style1}>
          <span className="text-red-500">V</span>arun B 
         </p>
       </div>
