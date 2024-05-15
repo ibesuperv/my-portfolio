@@ -8,6 +8,7 @@ function Notes() {
   const [inputText, setInputText] = useState("");
   const [notes, setNotes] = useState([]);
   const [editToggle, setEditToggle] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const editHandler = (id, text) => {
     setEditToggle(id);
@@ -44,6 +45,10 @@ function Notes() {
     setInputText(e.target.value);
   };
 
+  const searchHandler = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("Notes"));
     if (data) {
@@ -55,9 +60,19 @@ function Notes() {
     localStorage.setItem("Notes", JSON.stringify(notes));
   }, [notes]);
 
+  const filteredNotes = notes.filter((note) =>
+    note.text.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="notes">
-      {notes.map((note) =>
+      <input
+        type="text"
+        placeholder="Search notes..."
+        value={searchTerm}
+        onChange={searchHandler}
+      />
+      {filteredNotes.map((note) =>
         editToggle === note.id ? (
           <CreateNote
             key={note.id}
