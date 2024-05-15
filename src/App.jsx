@@ -3,9 +3,8 @@ import { auth, provider, gitProvider} from "./Firebaseconfig";
 import { signInWithPopup } from 'firebase/auth';
 import Appclone from './Appclone';
 import "./Signin.css";
-import { FaGoogle } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
-import { FaFacebook } from "react-icons/fa";
 
 function App() {
   const [value, setValue] = useState('');
@@ -37,7 +36,7 @@ function App() {
             <h1>FOR SECURITY PURPOSE PLEASE SIGNIN</h1>
           </div>
           <div className="social-login">
-            <button onClick={handleGClick}> <FaGoogle /></button>
+            <button onClick={handleGClick}> <FcGoogle /> </button>
             <button onClick={handleGitClick}><IoLogoGithub /></button>
           </div>
         </div>
