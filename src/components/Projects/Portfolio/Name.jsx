@@ -16,7 +16,7 @@ function Name() {
   return (
     <div id='name'>
       <div className="name">
-        <p className="intro font-semibold" style={style2}>
+        <p className="intro" style={style2}>
           Hi There 👋 ! This is 
         </p>
         <p className="varun font-black" style={style1}>
