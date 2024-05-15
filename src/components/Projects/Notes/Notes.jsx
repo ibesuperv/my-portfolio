@@ -64,14 +64,16 @@ function Notes() {
     note.text.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  return (
-    <div className="notes">
-      <input
+  return (<>
+    <input
         type="text"
         placeholder="Search notes..."
         value={searchTerm}
         onChange={searchHandler}
+        className="search"
       />
+    <div className="notes">
+      
       {filteredNotes.map((note) =>
         editToggle === note.id ? (
           <CreateNote
@@ -98,6 +100,7 @@ function Notes() {
         />
       )}
     </div>
+  </>
   );
 }
 
