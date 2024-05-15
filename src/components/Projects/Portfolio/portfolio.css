@@ -318,7 +318,8 @@
 
 
 #name {
-    width: 100vw;
+    width: 200vw;
+    overflow: hidden;
     height: 100vh;
     background-color: black;
     color: white;
