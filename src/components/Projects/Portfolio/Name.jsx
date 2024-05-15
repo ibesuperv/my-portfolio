@@ -4,7 +4,7 @@ import "./portfolio.css";
 function Name() {
   const style1 = {
     color: 'white',
-    fontSize: window.innerWidth < 430 ? '1rem' : '1.8rem', 
+    fontSize: window.innerWidth < 430 ? '1.5rem' : '2rem', 
   };
 
   const style2 = {
@@ -16,10 +16,10 @@ function Name() {
   return (
     <div id='name'>
       <div className="name">
-        <p className="intro font-bold" style={style2}>
+        <p className="intro font-semibold" style={style2}>
           Hi There 👋 ! This is 
         </p>
-        <p className="varun font-extrabold" style={style1}>
+        <p className="varun font-black" style={style1}>
          <span className="text-red-500">V</span>arun B 
         </p>
       </div>
