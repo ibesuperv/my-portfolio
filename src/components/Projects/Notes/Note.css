@@ -56,3 +56,28 @@
 .char__progress {
     background-color: #fff!important;
 }
+
+.search {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: inset -6px -4px 2px rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  border: 1.5px solid rgba(255, 255, 255, 0.326);
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 300px; 
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2); /* Lighter background on focus */
+}
+
+.search::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
