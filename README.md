@@ -1,4 +1,4 @@
-Deployed url : ibesuperv.vercel.app
+Deployed url : https://ibesuperv.vercel.app/
 
 
 
