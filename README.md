@@ -1,7 +1,8 @@
 Appendices 
+
     1. Portfolio Project
-        • Home Component GIF: A GIF demonstrating the Home component design sourced 
-          from kulbachny.com.
+    
+        • Home Component GIF: A GIF demonstrating the Home component design sourced from kulbachny.com.
         • About Component: React code snippet pfor the About page component created by 
           me.
         • Contact Component: React code snippet for the Contact page component created 
